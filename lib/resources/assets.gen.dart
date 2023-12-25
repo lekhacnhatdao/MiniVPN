@@ -19,7 +19,7 @@ class $AssetsIconsGen {
 
   /// File path: assets/icons/ic_power.svg
   SvgGenImage get icPower => const SvgGenImage('assets/icons/ic_power.svg');
-
+  
   /// List of all assets
   List<SvgGenImage> get values => [icCrown, icPower];
 
@@ -31,7 +31,7 @@ class $AssetsImagesGen {
 
   /// File path: assets/images/image_background.png
   AssetGenImage get imageBackground =>
-      const AssetGenImage('assets/images/Layer 1.png');
+      const AssetGenImage('assets/images/Group51.png');
 
   /// List of all assets
   List<AssetGenImage> get values => [imageBackground];

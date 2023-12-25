@@ -15,6 +15,7 @@ import 'package:openvpn/resources/assets.gen.dart';
 import 'package:openvpn/resources/colors.dart';
 import 'package:openvpn/resources/icondata.dart';
 import 'package:openvpn/resources/strings.dart';
+import 'package:openvpn/resources/theme.dart';
 import 'package:openvpn/utils/config.dart';
 
 @RoutePage()
@@ -40,46 +41,46 @@ class _MainPageState extends State<MainPage>
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
+   
     return SafeArea(
         bottom: false,
         child: Scaffold(
-          backgroundColor: Colors.transparent,
+          backgroundColor: Colors.black,
           appBar: AppBar(
             backgroundColor: Colors.black,
-            leading: const Row(
+            title:  Column(
+              crossAxisAlignment:CrossAxisAlignment.start ,
               children: [
-                SizedBox(
+                const SizedBox(
                   width: 20,
                 ),
-                Image(
-                  image: AssetImage('assets/images/Frame.png'),
+                const Image(
+                  image: AssetImage('assets/images/Group51.png'),
                   height: 30,
                 ),
+                Text('Unlimited Connection' , style: CustomTheme.textTheme.labelLarge?.copyWith(),)
               ],
             ),
-            title: const AppTitleText(
-              text: Config.appName,
-              color: Colors.white,
-            ),
+ 
             actions: [
-              Container(
-                margin: const EdgeInsets.symmetric(horizontal: 10),
-                child: TextButton(
-                    onPressed: () {},
-                    style: OutlinedButton.styleFrom(
-                      backgroundColor: AppColors.purple,
-                    ),
-                    child: Row(
-                      children: [
-                        Image.asset('assets/images/crown.png'),
-                        const Text(
-                          'Go VIP',
-                          style: TextStyle(color: Colors.white),
-                        )
-                      ],
-                    )),
-              )
+                   Container(
+        padding: const EdgeInsets.all(8),
+        decoration: const BoxDecoration(
+          color: Color(0xff131313),
+          borderRadius: BorderRadius.all(Radius.circular(10))
+        ),
+        child: InkWell(onTap: (){}, child: Icon(Appicon.menu, color: AppColors.icon,),),
+      ),
+      const SizedBox(width: 13,),
+      Container(
+        padding: const EdgeInsets.all(8),
+        decoration: const BoxDecoration(
+          color: Color(0xff131313),
+          borderRadius: BorderRadius.all(Radius.circular(10))
+        ),
+        child: InkWell(onTap: (){}, child: Icon(Appicon.menu, color: AppColors.icon,),),
+      ),
+      const SizedBox(width: 20,),
               // BlocBuilder<AppCubit, AppState>(
               //   builder: (context, state) {
               //     return Container(
@@ -111,33 +112,22 @@ class _MainPageState extends State<MainPage>
                   image: AssetImage('assets/images/Layer 1.png'),
                   fit: BoxFit.fill,
                 )),
-            child: Column(
-              children: [
-                SizedBox(height: 10,),
-                Expanded(
-                  child:
-                      TabBarView(controller: controller, children: const  [
-                    Text(
-                      'data',
-                      style: TextStyle(
-                          fontSize: 50, color: Colors.white),
-                    ),
+            child: 
                     VpnPage(),
-                    SettingPage(),
-                  ]),
-                ),
-                CustomBar(
-                  lenght: controller.length,
-                  icon: [
-                    Appicon.heart,
-                    Appicon.flashcircle,
-                    Icons.settings,
-                  ],
-                  onSelect: (index ) => controller.animateTo(index),
-                )
-              ],
+                    
+               
+                // CustomBar(
+                //   lenght: controller.length,
+                //   icon: [
+                //     Appicon.heart,
+                //     Appicon.flashcircle,
+                //     Icons.settings,
+                //   ],
+                //   onSelect: (index ) => controller.animateTo(index),
+                // )
+              
             ),
           ),
-        ));
+    );
   }
 }
