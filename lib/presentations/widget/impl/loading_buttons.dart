@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:openvpn/presentations/widget/index.dart';
 import 'package:openvpn/resources/colors.dart';
 
@@ -29,78 +30,55 @@ class LoadingButtons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(15),
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        color: Color.fromARGB(255, 59, 59, 59),
-      ),
-      child: GestureDetector(
-        onTap: onPressed,
-        child: Stack(
-          children: [
-            Container(
-              width: 150,
-              height: 150,
-              decoration: BoxDecoration(
+      padding: const EdgeInsets.all(1),
+      decoration:  BoxDecoration(
+          color:  isLoading? AppColors.icon:  changeUI ?  AppColors.icon : AppColors.connect,
+          shape: BoxShape.circle,
+          boxShadow: [
+            BoxShadow(color: isLoading? AppColors.icon:  changeUI ?  AppColors.icon : AppColors.connect, spreadRadius: 10, blurRadius: 10)
+          ]),
+      child: Container(
+        padding: const EdgeInsets.all(4),
+        decoration: const BoxDecoration(
+          shape: BoxShape.circle,
+          color: AppColors.primary,
+        ),
+        child: GestureDetector(
+          onTap: onPressed,
+          child: Stack(
+            children: [
+              Container(
+                height: 160,
+                width: 160,
+                decoration:  BoxDecoration(
+                  color:isLoading? AppColors.icon:  changeUI ?  AppColors.icon : AppColors.connect,
                   shape: BoxShape.circle,
-                  // ignore: lines_longer_than_80_chars
-                  gradient: LinearGradient(
-                    colors: isLoading
-                        ? [
-                            const Color(0xffBF00B5),
-                            const Color(0xffFFA555),
-                          ]
-                        : changeUI
-                            ? [
-                                const Color(0xffBF00B5),
-                                const Color(0xffFFA555),
-                              ]
-                            : [
-                                const Color(0xff0575E6),
-                                const Color(0xff00F260)
-                              ],
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                  )),
-            ),
-            Positioned(
-              left: 20,
-              right: 20,
-              top: 20,
-              bottom: 20,
-              child: Container(
-                decoration: const BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: Color.fromARGB(255, 59, 59, 59),
                 ),
-                padding: const EdgeInsets.all(10),
-                child: ShaderMask(
-                  blendMode: BlendMode.srcIn,
-                  shaderCallback: (Rect bounds) => RadialGradient(
-                    center: Alignment.bottomCenter,
-                    stops: [2, 3],
-                    colors: isLoading
-                        ? [Color(0xffFFFFFF), Color(0xffFFFFFF)]
-                        : changeUI
-                            ? [
-                                Color(0xffFFA555),
-                                Color(0xffBF00B5),
-                              ]
-                            : [Color(0xff0575E6), Color(0xff00F260)],
-                  ).createShader(bounds),
+              ),
+              Positioned(
+                left: 20,
+                right: 20,
+                top: 20,
+                bottom: 20,
+                child: Container(
+                  decoration:  BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: isLoading? AppColors.icon:  changeUI ?  AppColors.icon : AppColors.connect,
+                  ),
+                  padding: const EdgeInsets.all(10),
                   child: isLoading
                       ? Center(
-                          child: Text(
-                          text,
-                        ))
+                          child: LoadingAnimationWidget.staggeredDotsWave(
+                              color: Colors.white, size: 40))
                       : Icon(
                           icondata,
                           size: 80,
+                          color: Colors.white,
                         ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

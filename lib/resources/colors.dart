@@ -23,6 +23,7 @@ class AppColors {
   static const Color divider = Color(0xFFE0E0E0);
   static const Color purple = Color(0xff3A0CA3);
   static const Color icon = Color(0xff2077F2);
+  static const Color connect = Color(0xff08A045); 
   static const Color accent = Color(0xFF63AEC2);
   static const Color onAccent = Color(0xFFFFFFFF);
 
