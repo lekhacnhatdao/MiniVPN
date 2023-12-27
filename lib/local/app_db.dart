@@ -61,10 +61,16 @@ class AppDatabase {
     return _vpnBox.get(id);
   }
 
-  Future<void> deleteAllHistories() async {
+   Future<void> deleteAllHistories(Function()? callback) async {
     final List<HistoryModel> allHistories = getAllHistories();
+    int index = 0;
     for (final history in allHistories) {
       await _historyBox.delete(history.id);
+      index++;
+      if(index == allHistories.length)
+      {
+        callback?.call();
+      }
     }
     debugPrint('all history deleted');
   }

@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_dash/flutter_dash.dart';
+import 'package:get_ip_address/get_ip_address.dart';
 import 'package:openvpn/presentations/bloc/app_cubit.dart';
 import 'package:openvpn/presentations/bloc/app_state.dart';
 import 'package:openvpn/presentations/page/billing/premium_page.dart';
@@ -19,7 +20,8 @@ class VpnPage extends StatelessWidget {
   const VpnPage({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context)  {
+
     return BlocBuilder<AppCubit, AppState>(
       builder: (context, state) {
         return Stack(

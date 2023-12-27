@@ -3,10 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:openvpn/presentations/page/billing/premium_page.dart';
+
+import 'package:openvpn/presentations/page/main/history_page.dart';
 import 'package:openvpn/presentations/widget/impl/custompre.dart';
 import 'package:openvpn/presentations/widget/impl/settingcm.dart';
 import 'package:openvpn/resources/assets.gen.dart';
 import 'package:openvpn/resources/colors.dart';
+import 'package:openvpn/resources/icondata.dart';
 import 'package:openvpn/resources/theme.dart';
 import 'package:openvpn/utils/config.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -25,26 +28,33 @@ class _SettingPageState extends State<SettingPage> {
       Settings(
         text: 'Current IP',
         icon: Icons.location_on_outlined,
-        OnTap: (){}
+        OnTap: (){
+          Navigator.push(context, MaterialPageRoute(builder: (_) => HistoryPage()));
+        }
       ),
       Settings(
        text: 'Share app',
-        icon: Icons.location_on_outlined,
+        icon: Appicon.link,
         OnTap: (){}
       ),
       Settings(
         text: 'Feedback',
-        icon: Icons.location_on_outlined,
+        icon: Appicon.feedback,
         OnTap: (){}
       ),
       Settings(
        text: 'Contact us',
-        icon: Icons.location_on_outlined,
+        icon: Appicon.letter,
         OnTap: (){}
       ),
       Settings(
        text: 'Terms',
-        icon: Icons.location_on_outlined,
+        icon: Appicon.tems,
+        OnTap: (){}
+      ),
+      Settings(
+       text: 'Security',
+        icon: Appicon.seciurity,
         OnTap: (){}
       ),
     ];

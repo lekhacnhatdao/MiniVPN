@@ -16,5 +16,6 @@ class SharedPrefs {
   void setCurrentVPN({required int id}) {
     _sharedPreference.setInt(Preferences.currentVPN, id);
   }
+ 
 
 }

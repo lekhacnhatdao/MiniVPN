@@ -49,6 +49,7 @@ dependencies:
   flutter_dash: ^1.0.0
   gradient_icon: ^2.0.0
   loading_animation_widget: ^1.2.0+4
+  get_ip_address: ^0.0.6
 
 
 dev_dependencies:
