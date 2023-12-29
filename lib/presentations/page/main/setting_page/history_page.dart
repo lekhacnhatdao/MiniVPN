@@ -10,10 +10,10 @@ import 'package:openvpn/local/app_db.dart';
 import 'package:openvpn/presentations/bloc/app_cubit.dart';
 import 'package:openvpn/presentations/bloc/app_state.dart';
 import 'package:openvpn/presentations/widget/impl/app_body_text.dart';
-import 'package:openvpn/presentations/widget/impl/app_icon_buttons.dart';
-import 'package:openvpn/presentations/widget/impl/app_label_text.dart';
+
+
 import 'package:openvpn/presentations/widget/impl/app_title_text.dart';
-import 'package:openvpn/resources/assets.gen.dart';
+
 import 'package:openvpn/resources/colors.dart';
 import 'package:openvpn/utils/extension/date_extension.dart';
 
@@ -34,14 +34,16 @@ class _HistoryPageState extends State<HistoryPage> {
   }
 
   void _refreshListView() {
-    setState(() {});
+  
   }
 
   @override
   Widget build(BuildContext context) {
     bool isHistoryNotEmpty = false;
     return Scaffold(
+      backgroundColor: Colors.black,
       appBar: AppBar(
+        leading: const BackButton(color: Colors.white),
         centerTitle: true,
         title: const AppTitleText(
           text: 'History',
@@ -53,10 +55,10 @@ class _HistoryPageState extends State<HistoryPage> {
               if (isHistoryNotEmpty == true) {
                 _deleteAllConfirmationDialog();
               } else {
-                EasyLoading.showToast('History connection list is empty');
+                EasyLoading.showToast('History connection list is empty' );
               }
             },
-            child: Icon(Icons.abc),
+            child: const Icon(Icons.delete, color: Colors.white,),
           )
             
           
@@ -76,20 +78,22 @@ class _HistoryPageState extends State<HistoryPage> {
               children: [
                 Visibility(
                   visible: state.histories.isEmpty,
-                  child: Column(
+                  child: const Column(
                     children: [
-                      const SizedBox(height: 150),
-                      const SizedBox(height: 16),
-                      const AppBodyText(
-                        text: "Your history connect server is empty!",
+                      
+                      SizedBox(height: 150),
+                      SizedBox(height: 16),
+                      AppBodyText(
+                        text: 'Your history connect server is empty!',
                         size: 20,
                         textAlign: TextAlign.center,
+                        color: Colors.white,
                       ),
-                      SizedBox(
+                      const SizedBox(
                           width: 80,
                           height: 80,
-                          child:Icon(Icons.abc)),
-                      const SizedBox(height: 16),
+                        ),
+                      SizedBox(height: 16),
                     ],
                   ),
                 ),
@@ -120,28 +124,27 @@ class _HistoryPageState extends State<HistoryPage> {
       context: context,
       builder: (context) {
         return CupertinoAlertDialog(
-          title: const AppLabelText(
-            text: "Clear All history",
+          title: const Text(
+             'Clear All history',
           ),
-          content: const AppLabelText(
-            text:
+          content: const Text(
                 'Are you sure you want to clear All the server history information?',
           ),
           actions: [
-            CupertinoDialogAction(
+            TextButton(
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: const AppLabelText(
-                text: 'Cancel',
+              child: const Text(
+                'Cancel',
               ),
             ),
-            CupertinoDialogAction(
+            TextButton(
               onPressed: ()  {
                   getIt<AppDatabase>().deleteAllHistories((){
                     _refreshListView();
                   if (!context.mounted) return;
-                  Navigator.of(context).popUntil((route) => route.isFirst);
+                  // Navigator.of(context).popUntil((route) => route.isFirst);
                   EasyLoading.showToast('All History connection is deleted');
                   // Future.delayed(Duration(seconds: 2), () {
                   //   setState(() {
@@ -149,11 +152,10 @@ class _HistoryPageState extends State<HistoryPage> {
                   //   });
                   // });
                   context.read<AppCubit>().fetchHistoryList();
+                  Navigator.pop(context);
                 });
               },
-              child: const AppLabelText(
-                text: 'Delete',
-              ),
+              child: const Text('Delete')
             ),
           ],
         );

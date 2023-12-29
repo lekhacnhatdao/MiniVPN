@@ -1,20 +1,17 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_dash/flutter_dash.dart';
-import 'package:get_ip_address/get_ip_address.dart';
+
 import 'package:openvpn/presentations/bloc/app_cubit.dart';
 import 'package:openvpn/presentations/bloc/app_state.dart';
-import 'package:openvpn/presentations/page/billing/premium_page.dart';
+
 import 'package:openvpn/presentations/page/main/server_page/server_page.dart';
 import 'package:openvpn/presentations/widget/impl/app_thapgiac_text.dart';
 import 'package:openvpn/presentations/widget/impl/custompre.dart';
 import 'package:openvpn/presentations/widget/index.dart';
-import 'package:openvpn/resources/colors.dart';
+
 import 'package:openvpn/resources/icondata.dart';
-import 'package:openvpn/resources/strings.dart';
-import 'package:openvpn/resources/theme.dart';
-import 'package:openvpn/utils/config.dart';
+
 
 class VpnPage extends StatelessWidget {
   const VpnPage({super.key});

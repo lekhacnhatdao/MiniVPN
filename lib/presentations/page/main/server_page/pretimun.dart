@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:collection/collection.dart';
+
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:openvpn/domain/model/vpn/vpn_server_model.dart';
 import 'package:openvpn/presentations/bloc/app_cubit.dart';

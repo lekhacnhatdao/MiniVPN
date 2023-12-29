@@ -1,17 +1,15 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:flutter/foundation.dart';
+
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:openvpn/domain/model/vpn/vpn_server_model.dart';
 import 'package:openvpn/presentations/bloc/app_cubit.dart';
 import 'package:openvpn/presentations/bloc/app_state.dart';
 import 'package:openvpn/presentations/route/app_router.gr.dart';
-import 'package:openvpn/presentations/widget/impl/app_body_text.dart';
-import 'package:openvpn/presentations/widget/impl/app_label_text.dart';
-import 'package:openvpn/resources/colors.dart';
+
 import 'package:openvpn/resources/icondata.dart';
-import 'package:openvpn/resources/strings.dart';
+
 
 class AllServer extends StatefulWidget {
   const AllServer({super.key});

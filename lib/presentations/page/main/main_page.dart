@@ -1,24 +1,22 @@
-import 'package:animated_segmented_tab_control/animated_segmented_tab_control.dart';
+
 import 'package:auto_route/annotations.dart';
-import 'package:cached_network_image/cached_network_image.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_dash/flutter_dash.dart';
 import 'package:openvpn/presentations/bloc/app_cubit.dart';
 import 'package:openvpn/presentations/bloc/app_state.dart';
-import 'package:openvpn/presentations/page/main/home_left_menu_page.dart';
-import 'package:openvpn/presentations/page/main/server_page/server_page.dart';
-import 'package:openvpn/presentations/page/main/settingpage.dart';
+
+import 'package:openvpn/presentations/page/main/setting_page/settingpage.dart';
 import 'package:openvpn/presentations/page/main/vpn_page.dart';
-import 'package:openvpn/presentations/widget/impl/custombar.dart';
+
 import 'package:openvpn/presentations/widget/impl/customdata.dart';
-import 'package:openvpn/presentations/widget/index.dart';
-import 'package:openvpn/resources/assets.gen.dart';
+
 import 'package:openvpn/resources/colors.dart';
 import 'package:openvpn/resources/icondata.dart';
 import 'package:openvpn/resources/strings.dart';
 import 'package:openvpn/resources/theme.dart';
-import 'package:openvpn/utils/config.dart';
+
 
 @RoutePage()
 class MainPage extends StatefulWidget {

@@ -1,18 +1,12 @@
-import 'package:auto_route/auto_route.dart';
-import 'package:cached_network_image/cached_network_image.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:openvpn/domain/model/index.dart';
+
 import 'package:openvpn/presentations/bloc/app_cubit.dart';
 import 'package:openvpn/presentations/bloc/app_state.dart';
-import 'package:openvpn/presentations/page/billing/premium_page.dart';
+
 import 'package:openvpn/presentations/page/main/server_page/allserver.dart';
-import 'package:openvpn/presentations/page/main/server_page/pretimun.dart';
-import 'package:openvpn/presentations/route/app_router.gr.dart';
-import 'package:openvpn/presentations/widget/index.dart';
-import 'package:openvpn/resources/colors.dart';
-import 'package:openvpn/resources/icondata.dart';
-import 'package:openvpn/resources/strings.dart';
+
 
 class ServerPage extends StatefulWidget {
   const ServerPage({super.key});

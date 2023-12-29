@@ -20,6 +20,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/ic_power.svg
   SvgGenImage get icPower => const SvgGenImage('assets/icons/ic_power.svg');
   
+ SvgGenImage get icStar1 => const SvgGenImage('assets/icons/ic_Star1.svg');
+   SvgGenImage get icStar2 => const SvgGenImage('assets/icons/ic_Star2.svg');
+  
   /// List of all assets
   List<SvgGenImage> get values => [icCrown, icPower];
 
