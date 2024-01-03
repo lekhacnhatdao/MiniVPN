@@ -1,7 +1,7 @@
 final class Config {
   Config._();
 
-  static const appName = 'Amazing VPN';
+  static const appName = 'Mini VPN';
   static const version = '2.5';
   static const company = 'saigonzoolandsstudio';
   static const bundleId = 'com.saigonzoolandsstudio.WordQuizAnimal';

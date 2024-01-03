@@ -4,6 +4,7 @@
     <application
         android:name="${applicationName}"
         android:extractNativeLibs="true"
+        android:enableOnBackInvokedCallback="true" 
         android:icon="@mipmap/ic_launcher"
         android:label="SOS VPN"
         android:roundIcon="@mipmap/ic_launcher_round"

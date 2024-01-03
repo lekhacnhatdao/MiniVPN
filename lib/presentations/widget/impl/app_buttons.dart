@@ -7,12 +7,12 @@ class AppButtons extends StatelessWidget {
     super.key,
     required this.text,
     this.icon,
-    this.backgroundColor = AppColors.accent,
+    this.backgroundColor = AppColors.icon,
     this.onPressed,
     this.margin,
     this.height = 52,
     this.width,
-    this.textColor = AppColors.onAccent,
+    this.textColor = AppColors.primary,
   });
 
   final Widget? icon;

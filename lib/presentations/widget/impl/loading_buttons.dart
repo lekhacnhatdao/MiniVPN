@@ -14,9 +14,10 @@ class LoadingButtons extends StatelessWidget {
     this.onPressed,
     this.margin,
     required this.icondata,
-    required this.changeUI,
-  });
+    required this.changeUI,  this.size,
 
+  });
+  final double ? size;
   final bool isLoading;
   final bool changeUI;
   final IconData icondata;
@@ -72,7 +73,7 @@ class LoadingButtons extends StatelessWidget {
                               color: Colors.white, size: 40))
                       : Icon(
                           icondata,
-                          size: 80,
+                          size: size,
                           color: Colors.white,
                         ),
                 ),

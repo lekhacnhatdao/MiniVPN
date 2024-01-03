@@ -14,5 +14,6 @@ class Appicon {
   static IconData letter = const IconData(0xe90a, fontFamily: 'icomoon');
   static IconData tems = const IconData(0xe90b, fontFamily: 'icomoon');
   static IconData seciurity = const IconData(0xe909, fontFamily: 'icomoon');
-  
+  static IconData wifi = const IconData(0xe90d, fontFamily: 'icomoon');
+  static IconData scan = const IconData(0xe90e, fontFamily: 'icomoon');
 }

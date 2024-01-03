@@ -36,8 +36,7 @@ class _CurrentPageState extends State<CurrentPage> {
               const SizedBox(height:100,),
               Current('My IP:', state.currentServer?.ip ?? '',
                   state.currentServer?.flag ?? '', false),
-              Current('Your IP:', Ip.ip ?? '',
-                  state.currentServer?.flag ?? '', false),
+            
               Current('Nation:', state.currentServer?.country ?? '',
                   state.currentServer?.flag ?? '', true),
               Current('Area:', state.currentServer?.region ?? '',

@@ -10,7 +10,7 @@ class Strings {
       '• Unlock all Unlimited Edition servers';
   static const String superFastServer = '• Super fast server, easy access';
   static const String customerSupport = '• 24/7 customer support';
-  static const String getPremiumNow = 'Get Unlimited Edition Now';
+  static const String getPremiumNow = 'Subcribe now';
 
   //ShopPage
   static const String shop = 'Shop';

@@ -77,6 +77,7 @@ class VpnPage extends StatelessWidget {
                     height: 39,
                   ),
                   LoadingButtons(
+                    size: 80,
                     icondata: Appicon.power,
                     isLoading: state.isConnecting,
                     icon: Icon(Appicon.menu),
